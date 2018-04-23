@@ -29,7 +29,7 @@ namespace Labirint_gen
                 Graphics gr = default(Graphics);
                 gr = Graphics.FromImage(main_scr);
                 Rectangle rect = new Rectangle(0, 0, width, height);
-                gr.FillRectangle(Brushes.White, rect);
+                gr.FillRectangle(Brushes.Green, rect);
             }
             else main_scr = (Bitmap)this.pictureBox.Image;
             
