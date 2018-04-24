@@ -24,41 +24,52 @@ namespace Labirint_gen
             int height = this.Work_Bitmap.Height;
             int width = this.Work_Bitmap.Width;
             pb.Minimum = 0;
-            pb.Maximum = (width - 2) * (height - 2);
-            int cor_count = 0;
-            for (int x = 1; x < (width - 1); x++)
+            for (int d = 1; d < 5; d++)
             {
-                for (int y = 1; y < (height - 1); y++)
+                pb.Maximum = (width - 2*d) * (height - 2*d);
+                int cor_count = 0;
+                for (int x = d; x < (width - d); x++)
                 {
-                    if (this.PointCorrect(x, y)) cor_count++;
-                    pb.Value++;
-                    if (cor_count > (pb.Maximum / 10))
+                    for (int y = d; y < (height - d); y++)
                     {
-                        this.pictureBox.Image = this.Work_Bitmap;
-                        this.pictureBox.Update();
-                        cor_count = 0;
+                        if (this.PointCorrect(x, y, d,d)) cor_count++;
+                        pb.Value++;
+                        if (cor_count > (pb.Maximum / 10))
+                        {
+                            this.pictureBox.Image = this.Work_Bitmap;
+                            this.pictureBox.Update();
+                            cor_count = 0;
+                        }
                     }
                 }
+                pb.Value = 0;
+                this.pictureBox.Image = this.Work_Bitmap;
+                this.pictureBox.Update();
             }
-            pb.Value = 0;
             return this.Work_Bitmap;
         }
 
-        private bool PointCorrect(int px, int py)
+        private bool PointCorrect(int px, int py, int start_end,int  cnt)
         {
-            Color etalon = this.Work_Bitmap.GetPixel(px - 1, py - 1);
+            Color etalon = this.Work_Bitmap.GetPixel(px - start_end, py - start_end);
+            Color etalon2 = this.Work_Bitmap.GetPixel(px + start_end, py + start_end);
             Color central = this.Work_Bitmap.GetPixel(px, py);
             bool need_to_correct = true;
-            if (etalon != central)
+            if ((etalon != central) || (etalon2 != central))
             {
-                for (int x = -1; x <= 1; x++)
+                int count = 0;
+                for (int x = -start_end; x <= start_end; x++)
                 {
-                    for (int y = -1; y <= 1; y++)
+                    for (int y = -start_end; y <= start_end; y++)
                     {
                         if (x != y)
                         {
                             Color cur_color = this.Work_Bitmap.GetPixel(px + x, py + y);
-                            if (cur_color != etalon) need_to_correct = false;
+                            if (cur_color != etalon) count++;
+                        }
+                        if (count > (cnt))
+                        {
+                            need_to_correct = false;
                         }
                     }
                 }

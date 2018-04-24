@@ -32,6 +32,15 @@
             this.pict_panel = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.control_panel = new System.Windows.Forms.Panel();
+            this.noise_numeric = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.depoint_bttn = new System.Windows.Forms.Button();
+            this.Y_numeric = new System.Windows.Forms.NumericUpDown();
+            this.X_numeric = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.digs_numeric = new System.Windows.Forms.NumericUpDown();
+            this.deep_numeric = new System.Windows.Forms.NumericUpDown();
             this.digs_chkbx = new System.Windows.Forms.CheckBox();
             this.noise_chkbx = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,15 +50,6 @@
             this.seed_textbx = new System.Windows.Forms.TextBox();
             this.clear_bttn = new System.Windows.Forms.Button();
             this.start_bttn = new System.Windows.Forms.Button();
-            this.deep_numeric = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.digs_numeric = new System.Windows.Forms.NumericUpDown();
-            this.X_numeric = new System.Windows.Forms.NumericUpDown();
-            this.Y_numeric = new System.Windows.Forms.NumericUpDown();
-            this.depoint_bttn = new System.Windows.Forms.Button();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.noise_numeric = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.main_splitContainer)).BeginInit();
             this.main_splitContainer.Panel1.SuspendLayout();
             this.main_splitContainer.Panel2.SuspendLayout();
@@ -57,11 +57,11 @@
             this.pict_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.control_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deep_numeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digs_numeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_numeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Y_numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noise_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Y_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digs_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deep_numeric)).BeginInit();
             this.SuspendLayout();
             // 
             // main_splitContainer
@@ -127,6 +127,132 @@
             this.control_panel.Name = "control_panel";
             this.control_panel.Size = new System.Drawing.Size(867, 98);
             this.control_panel.TabIndex = 0;
+            // 
+            // noise_numeric
+            // 
+            this.noise_numeric.Location = new System.Drawing.Point(126, 61);
+            this.noise_numeric.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.noise_numeric.Name = "noise_numeric";
+            this.noise_numeric.Size = new System.Drawing.Size(74, 20);
+            this.noise_numeric.TabIndex = 17;
+            this.noise_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.noise_numeric.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(128, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Count";
+            // 
+            // progressBar
+            // 
+            this.progressBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar.Location = new System.Drawing.Point(0, 88);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(867, 10);
+            this.progressBar.TabIndex = 15;
+            // 
+            // depoint_bttn
+            // 
+            this.depoint_bttn.Location = new System.Drawing.Point(349, 45);
+            this.depoint_bttn.Name = "depoint_bttn";
+            this.depoint_bttn.Size = new System.Drawing.Size(75, 36);
+            this.depoint_bttn.TabIndex = 14;
+            this.depoint_bttn.Text = "Depoint";
+            this.depoint_bttn.UseVisualStyleBackColor = true;
+            this.depoint_bttn.Click += new System.EventHandler(this.depoint_bttn_Click);
+            // 
+            // Y_numeric
+            // 
+            this.Y_numeric.Location = new System.Drawing.Point(3, 62);
+            this.Y_numeric.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.Y_numeric.Name = "Y_numeric";
+            this.Y_numeric.Size = new System.Drawing.Size(64, 20);
+            this.Y_numeric.TabIndex = 13;
+            this.Y_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Y_numeric.Value = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            // 
+            // X_numeric
+            // 
+            this.X_numeric.Location = new System.Drawing.Point(3, 18);
+            this.X_numeric.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.X_numeric.Name = "X_numeric";
+            this.X_numeric.Size = new System.Drawing.Size(64, 20);
+            this.X_numeric.TabIndex = 12;
+            this.X_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.X_numeric.Value = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(214, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Deep";
+            // 
+            // digs_numeric
+            // 
+            this.digs_numeric.Location = new System.Drawing.Point(126, 18);
+            this.digs_numeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.digs_numeric.Name = "digs_numeric";
+            this.digs_numeric.Size = new System.Drawing.Size(72, 20);
+            this.digs_numeric.TabIndex = 10;
+            this.digs_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.digs_numeric.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // deep_numeric
+            // 
+            this.deep_numeric.Location = new System.Drawing.Point(206, 62);
+            this.deep_numeric.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.deep_numeric.Name = "deep_numeric";
+            this.deep_numeric.Size = new System.Drawing.Size(56, 20);
+            this.deep_numeric.TabIndex = 10;
+            this.deep_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.deep_numeric.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // digs_chkbx
             // 
@@ -199,7 +325,7 @@
             this.seed_textbx.Name = "seed_textbx";
             this.seed_textbx.Size = new System.Drawing.Size(139, 20);
             this.seed_textbx.TabIndex = 1;
-            this.seed_textbx.Text = "aNy teXt To RanDom sEEd";
+            this.seed_textbx.Text = "aNy teXt To sEEd";
             // 
             // clear_bttn
             // 
@@ -221,132 +347,6 @@
             this.start_bttn.UseVisualStyleBackColor = true;
             this.start_bttn.Click += new System.EventHandler(this.start_bttn_Click);
             // 
-            // deep_numeric
-            // 
-            this.deep_numeric.Location = new System.Drawing.Point(206, 62);
-            this.deep_numeric.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.deep_numeric.Name = "deep_numeric";
-            this.deep_numeric.Size = new System.Drawing.Size(56, 20);
-            this.deep_numeric.TabIndex = 10;
-            this.deep_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.deep_numeric.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(214, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Deep";
-            // 
-            // digs_numeric
-            // 
-            this.digs_numeric.Location = new System.Drawing.Point(126, 18);
-            this.digs_numeric.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.digs_numeric.Name = "digs_numeric";
-            this.digs_numeric.Size = new System.Drawing.Size(72, 20);
-            this.digs_numeric.TabIndex = 10;
-            this.digs_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.digs_numeric.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // X_numeric
-            // 
-            this.X_numeric.Location = new System.Drawing.Point(3, 18);
-            this.X_numeric.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.X_numeric.Name = "X_numeric";
-            this.X_numeric.Size = new System.Drawing.Size(64, 20);
-            this.X_numeric.TabIndex = 12;
-            this.X_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.X_numeric.Value = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            // 
-            // Y_numeric
-            // 
-            this.Y_numeric.Location = new System.Drawing.Point(3, 62);
-            this.Y_numeric.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.Y_numeric.Name = "Y_numeric";
-            this.Y_numeric.Size = new System.Drawing.Size(64, 20);
-            this.Y_numeric.TabIndex = 13;
-            this.Y_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Y_numeric.Value = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            // 
-            // depoint_bttn
-            // 
-            this.depoint_bttn.Location = new System.Drawing.Point(349, 45);
-            this.depoint_bttn.Name = "depoint_bttn";
-            this.depoint_bttn.Size = new System.Drawing.Size(75, 36);
-            this.depoint_bttn.TabIndex = 14;
-            this.depoint_bttn.Text = "Depoint";
-            this.depoint_bttn.UseVisualStyleBackColor = true;
-            this.depoint_bttn.Click += new System.EventHandler(this.depoint_bttn_Click);
-            // 
-            // progressBar
-            // 
-            this.progressBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar.Location = new System.Drawing.Point(0, 88);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(867, 10);
-            this.progressBar.TabIndex = 15;
-            // 
-            // noise_numeric
-            // 
-            this.noise_numeric.Location = new System.Drawing.Point(126, 61);
-            this.noise_numeric.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.noise_numeric.Name = "noise_numeric";
-            this.noise_numeric.Size = new System.Drawing.Size(74, 20);
-            this.noise_numeric.TabIndex = 17;
-            this.noise_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.noise_numeric.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(128, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Count";
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,11 +363,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.control_panel.ResumeLayout(false);
             this.control_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deep_numeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digs_numeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_numeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Y_numeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noise_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Y_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.X_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digs_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deep_numeric)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -20,7 +20,7 @@ namespace Labirint_gen
         //fill array by seed
         public void seeding(string sd)
         {
-            int array_lenght = (int)Math.Round(0.4999999 + ((double)sd.Length / 4.0), 0);
+            int array_lenght = (int)Math.Ceiling((double)sd.Length / 4.0);
             if (array_lenght > 0)
             {
                 this.rnd_array = new Random[array_lenght];
